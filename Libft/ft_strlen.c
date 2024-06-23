@@ -6,17 +6,18 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:31:09 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/17 10:31:09 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:15:12 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int    ft_strlen(const char *str)
+unsigned int	ft_strlen(const char *str)
 {
-    unsigned int i;
+	unsigned int	i;
 
-    while (str[i])
-    {
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }

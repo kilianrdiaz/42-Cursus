@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 13:46:20 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 14:20:54 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 13:40:55 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/06/18 13:43:36 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	while (str[i])
-	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (0);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }

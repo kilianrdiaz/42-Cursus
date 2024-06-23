@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 13:46:20 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 14:20:54 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 12:16:54 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/06/18 13:31:38 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	int	i;
+	int		i;
+	char	*temp;
 
-	while (str[i])
+	i = 0;
+	while (i < n)
 	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
+		temp[i] = ((char *)s2[i]);
 		i++;
 	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (0);
+	i = 0;
+	while (i < n)
+	{
+		((char *)s1[i]) = temp[i];
+		i++;
+	}
+	return (s1);
 }

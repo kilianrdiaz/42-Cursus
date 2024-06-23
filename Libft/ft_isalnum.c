@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 13:46:20 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 14:20:54 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/13 16:50:26 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/06/18 13:37:05 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+int	ft_isalnum(int n)
 {
-	int	i;
-
-	while (str[i])
-	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (0);
+	if ((n >= 'A' && n <= 'Z')
+		|| (n >= 'a' && n <= 'z')
+		|| (n >= 0 && n <= 9))
+		return (1);
+	else
+		return (0);
 }

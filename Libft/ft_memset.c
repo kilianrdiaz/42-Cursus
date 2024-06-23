@@ -6,19 +6,19 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:30:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/17 10:30:53 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/18 13:32:13 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *ft_memset(void *str, int c, unsigned int n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < n)
-    {
-        ((char*)str)[i] = c;
-        i++;
-    }
-    return (str);
+	i = 0;
+	while (i < n)
+	{
+		((char *)str)[i] = c;
+		i++;
+	}
+	return (str);
 }

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/18 13:46:20 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 14:20:54 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 12:53:26 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/06/18 12:55:33 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	while (str[i])
-	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

@@ -6,14 +6,14 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:31:23 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/17 10:31:23 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:11:42 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 126)
-        return (1);
-    else
-        return (0);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
