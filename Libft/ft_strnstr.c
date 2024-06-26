@@ -6,19 +6,19 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 20:53:57 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 17:25:13 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:52:57 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*strnstr(const char *s, const char *find, size_t len)
+char	*ft_strnstr(const char *s, const char *find, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	i = 0;
 	if (!find)
-		return (s);
+		return ((char *)s);
 	while (s[i] && i < len)
 	{
 		j = 0;

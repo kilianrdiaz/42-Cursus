@@ -6,9 +6,10 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:52:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 19:10:45 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:57:36 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

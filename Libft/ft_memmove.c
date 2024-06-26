@@ -6,26 +6,26 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:16:54 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 13:31:38 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:45:15 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	int		i;
-	char	*temp;
+	char	*p1;
+	char	*p2;
 
-	i = 0;
-	while (i < n)
+	if (s1 < s2)
+		return (ft_memcpy(s1, s2, n));
+	p1 = (char *)s1;
+	p2 = (char *)s2;
+	if (!n || s1 == s2)
+		return (s1);
+	while (n > 0)
 	{
-		temp[i] = ((char *)s2[i]);
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		((char *)s1[i]) = temp[i];
-		i++;
+		p1[n] = p2[n];
+		n--;
 	}
 	return (s1);
 }

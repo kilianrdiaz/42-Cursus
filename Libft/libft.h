@@ -6,7 +6,7 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 20:02:05 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 17:31:03 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:47:35 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 
 # include <stdlib.h>
 
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 #endif

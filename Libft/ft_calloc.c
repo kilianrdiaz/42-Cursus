@@ -6,16 +6,16 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 17:58:27 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 18:52:11 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:55:37 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	char	*temp;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	ptr = malloc(nmemb * size);

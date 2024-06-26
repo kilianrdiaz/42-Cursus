@@ -6,7 +6,7 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 20:26:49 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 17:29:44 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:31:45 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const char	*ss1;
 	const char	*ss2;
-	int			i;
+	size_t		i;
 
 	ss1 = (const char *)s1;
 	ss2 = (const char *)s2;

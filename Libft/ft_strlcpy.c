@@ -6,9 +6,10 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:25:34 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/18 13:36:20 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:49:28 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {

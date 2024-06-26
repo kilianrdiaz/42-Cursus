@@ -6,15 +6,15 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 18:31:51 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 18:50:50 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:57:02 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		slen;
+	size_t	i;
+	size_t	slen;
 	char	*subs;
 
 	slen = 0;
