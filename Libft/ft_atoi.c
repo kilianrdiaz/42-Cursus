@@ -6,11 +6,11 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 21:50:38 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/06/23 17:06:35 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/03 20:58:26 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;

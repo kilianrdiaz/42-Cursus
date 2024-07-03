@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 17:32:39 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/03 17:32:39 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/07/03 20:40:26 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/03 20:53:40 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    ft_putstr_fd(ft_itoa(n), fd);
-    return ;
+	ft_putstr_fd(ft_itoa(n), fd);
+	return ;
 }
