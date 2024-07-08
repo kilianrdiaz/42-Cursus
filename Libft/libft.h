@@ -6,7 +6,7 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 20:02:05 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/03 21:27:31 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:05:50 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, unsigned int size);
 size_t		ft_strlen(const char *str);
-char		ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *s, const char *find, size_t len);
 char		*ft_strrchr(const char *str, int c);

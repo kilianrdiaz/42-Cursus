@@ -6,10 +6,12 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 20:41:17 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/03 20:50:00 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:19:49 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <string.h>
 
 void	ft_free(char *split)
 {
@@ -24,7 +26,7 @@ void	ft_free(char *split)
 	free(split);
 }
 
-void	ft_copy_word(char *word, char *s, char c, int start)
+void	ft_copy_word(char *word, char const *s, char c, int start)
 {
 	int	i;
 
