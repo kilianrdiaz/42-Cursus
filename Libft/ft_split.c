@@ -6,12 +6,11 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 20:41:17 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/08 15:19:49 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:49:47 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	ft_free(char *split)
 {
@@ -66,6 +65,7 @@ char	*ft_get_words(char const *s, char c, int *pos)
 		}
 	}
 	ft_copy_word(word, s, c, start);
+	return (word);
 }
 
 int	ft_countwords(char const *s, char c)
@@ -87,6 +87,7 @@ int	ft_countwords(char const *s, char c)
 		}
 		i++;
 	}
+	return (nwords);
 }
 
 char	**ft_split(char const *s, char c)
@@ -99,7 +100,6 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	pos = 0;
-	split = NULL;
 	nwords = ft_countwords(s, c);
 	split = (char **)malloc((nwords + 1) * sizeof(char *));
 	if (split == NULL)

@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 20:47:03 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/08 15:04:09 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:41:18 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s)
 		return (NULL);
-	len = strlen(s);
+	len = ft_strlen(s);
 	rtn = malloc(sizeof(char) * (len + 1));
 	if (!rtn)
 		return (NULL);

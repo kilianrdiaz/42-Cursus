@@ -6,7 +6,7 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 23:19:50 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/08 14:21:22 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:51:38 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,4 +50,5 @@ char	*ft_itoa(int n)
 	if (neg)
 		rtn[0] = '-';
 	ft_convert(n, rtn, i);
+	return (rtn);
 }
