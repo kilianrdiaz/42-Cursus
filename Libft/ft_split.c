@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 20:41:17 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/08 15:49:47 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/09 14:42:06 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ char	*ft_get_words(char const *s, char c, int *pos)
 		if (s[*pos] != c)
 		{
 			while (s[*pos] && s[*pos] != c)
-				pos += 1;
-			word = (char *)malloc(sizeof(char) * (*pos - start + 2));
+				*pos += 1;
+			word = (char *)malloc(sizeof(char) * (*pos - start + 1));
 			if (word == NULL)
 				return (NULL);
 			break ;

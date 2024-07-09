@@ -3,52 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 23:19:50 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/08 15:51:38 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/07/09 14:04:20 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/09 14:14:07 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_convert(int n, char *rtn, int i)
+static	int	ft_count_char(int num)
 {
-	int	mod;
+	int	count;
 
-	while (n != 0)
+	count = 0;
+	if (num != 0)
 	{
-		mod = n % 10;
-		rtn[--i] = '0' + mod;
-		n /= 10;
+		if (num < 0)
+		{
+			num *= -1;
+			count++;
+		}
+		while (num != 0)
+		{
+			num /= 10;
+			count++;
+		}
 	}
+	else
+		count = 1;
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*rtn;
-	int		neg;
-	int		temp;
-	int		i;
+	int			len;
+	char		*str;
+	long int	nbr;
 
-	i = 0;
-	neg = 0;
-	if (n < 0)
+	len = ft_count_char(n);
+	nbr = n;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	if (nbr < 0)
 	{
-		n = n * (-1);
-		neg = 1;
-		i++;
+		str[0] = '-';
+		nbr = -nbr;
 	}
-	temp = n;
-	while (temp != 0)
+	if (nbr == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nbr)
 	{
-		temp /= 10;
-		i++;
+		str[len] = ((nbr % 10) + '0');
+		nbr /= 10;
+		len--;
 	}
-	rtn = (char *)malloc(sizeof(char) * i);
-	if (!rtn)
-		return (NULL);
-	if (neg)
-		rtn[0] = '-';
-	ft_convert(n, rtn, i);
-	return (rtn);
+	return (str);
 }

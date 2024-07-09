@@ -6,22 +6,24 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:46:20 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/05 20:10:53 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/09 13:51:25 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int		i;
+	char	a;
 
 	i = 0;
+	a = c;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == a)
 			return ((char *)&str[i]);
 		i++;
 	}
-	if (str[i] == c)
+	if (str[i] == a)
 		return ((char *)&str[i]);
 	return (0);
 }
