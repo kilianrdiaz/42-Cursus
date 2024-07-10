@@ -6,7 +6,7 @@
 #    By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 19:13:47 by kroyo-di          #+#    #+#              #
-#    Updated: 2024/07/08 15:53:54 by kroyo-di         ###   ########.fr        #
+#    Updated: 2024/07/10 15:43:23 by kroyo-di         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,12 @@ INC = libft.h
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Werror -Wextra
 
-$(NAME) : $(OBJS) $(INC)
+$(NAME) : $(OBJS) $(INC) Makefile
 	ar rcs $(NAME) $(OBJS)
 
 all : $(NAME)
 
-%.o : %.c
+%.o : %.c libft.h
 	gcc $(CFLAGS) -c $< -o $@
 
 clean:
