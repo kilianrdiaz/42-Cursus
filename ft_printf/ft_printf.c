@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:57:23 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/15 16:51:19 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:02:17 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_get_type(va_list arg_list, char type)
 {
-		if (type == 'c')
-				ft_putchar_fd(va_arg(arg_list, int), 1);
-		else if (type == 'd')
-				ft_putnbr_fd(va_arg(arg_list, int), 1);
-		else if (type == 's')
-				ft_putstr_fd(va_arg(arg_list, char*), 1);
-		else if
-
+	if (type == 'c')
+		ft_putchar_fd(va_arg(arg_list, int), 1);
+	else if (type == 'd')
+		ft_putnbr_fd(va_arg(arg_list, int), 1);
+	else if (type == 's')
+		ft_putstr_fd(va_arg(arg_list, char *), 1);
 }
 
 int	ft_printf(char const *format, ...)
@@ -49,5 +47,5 @@ int	ft_printf(char const *format, ...)
 int	main(void)
 {
 	ft_printf("Hola buenas %s, bienvenido!", "Kilian");
-	return (0);	
+	return (0);
 }
