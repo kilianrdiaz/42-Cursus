@@ -6,10 +6,11 @@
 /*   By: kroyo-di <kroyo-di@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:31:09 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/03 21:31:00 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:26:07 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include "ft_printf.h"
 
 size_t	ft_strlen(const char *str)
 {
