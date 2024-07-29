@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhex.c                                      :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 19:42:30 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/29 20:03:54 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/07/29 20:05:00 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/29 20:31:38 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_printhex(unsigned int num, const char format, int *count)
+void	ft_printptr(void *p, int *count)
 {
 	
 }
