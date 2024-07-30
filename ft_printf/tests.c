@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:51:28 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/29 19:39:16 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/30 21:05:11 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(void)
 	ft_printf("STRING:\nPersonal: %s \n", "funciona correctamente");
 	printf("Original: %s \n\n", "funciona correctamente");
 
-	ft_printf("HEXADECIMAL:\n");
-	printf("Original: %x\n\n", 255);
+	ft_printf("HEXADECIMAL:\nPersonal: %X - %x\n", 42, 255);
+	printf("Original: %x - %X\n\n", 42, 255);
 
 	ft_printf("Personal: %% \n");
 	printf("Original: %% \n");

@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:57:23 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/29 20:31:17 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/07/30 20:37:49 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_get_type(va_list arg_list, const char format, int *count)
 		ft_printnbr(va_arg(arg_list, int), count);
 	else if (format == 's')
 		ft_printstr(va_arg(arg_list, char *), count);
-	else if (format == 'p')
-		ft_printptr(va_arg(arg_list, void *), count);
 	else if (format == 'x' || format == 'X')
 		ft_printhex(va_arg(arg_list, unsigned int), format, count);
+	else if (format == 'p')
+		ft_printptr(va_arg(arg_list, void *), count);
 	else if (format == '%')
 		ft_printchar('%', count);
 }
