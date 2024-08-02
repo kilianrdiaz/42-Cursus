@@ -12,7 +12,7 @@
 
 NAME = libftprintf.a
 SRCS = ft_printf.c ft_printchar.c ft_printnbr.c ft_printstr.c ft_strlen.c\
-ft_printhex.c ft_printptr.c tests.c
+ft_printhex.c ft_printptr.c ft_printunsigned.c tests.c
 INC = ft_printf.h
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Werror -Wextra

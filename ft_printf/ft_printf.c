@@ -24,6 +24,8 @@ void	ft_get_type(va_list arg_list, const char format, int *count)
 		ft_printhex(va_arg(arg_list, unsigned int), format, count);
 	else if (format == 'p')
 		ft_printptr(va_arg(arg_list, void *), count);
+	else if (format == 'u')
+		ft_printunsigned(va_arg(arg_list, unsigned int), count);
 	else if (format == '%')
 		ft_printchar('%', count);
 }

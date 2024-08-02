@@ -22,5 +22,6 @@ void	ft_printnbr(int n, int *count);
 void	ft_printstr(char *s, int *count);
 void    ft_printhex(unsigned int num, const char format, int *count);
 void	ft_printptr(void *p, int *count);
+void	ft_printunsigned(unsigned int n, int *count);
 size_t	ft_strlen(const char *str);
 #endif
