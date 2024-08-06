@@ -15,5 +15,5 @@
 void	ft_printchar(char c, int *count)
 {
 	write (1, &c, 1);
-	count++;
+	*count += 1;
 }

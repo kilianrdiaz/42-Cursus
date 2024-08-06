@@ -17,6 +17,6 @@ void	ft_printstr(char *s, int *count)
 	if (!s)
 		return ;
 	write (1, s, ft_strlen(s));
-	count += ft_strlen(s);
+	*count += ft_strlen(s);
 	return ;
 }

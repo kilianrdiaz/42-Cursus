@@ -38,5 +38,8 @@ int	main(void)
 
 	ft_printf("PORCENTAJE:\nPersonal: %% \n");
 	printf("Original: %% \n");
+
+	ft_printf("RETURN:\nPersonal: %d\n", ft_printf("Siento haberte conocido %s", "Oscar"));
+	printf("Original: %d\n", printf("Siento haberte conocido %s", "Oscar"));
 	return (0);
 }
