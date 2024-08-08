@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:05:00 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/07/30 20:57:28 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/08/08 14:00:13 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -29,11 +29,11 @@ void	ft_printptr_hex(unsigned long long num, int *count)
 
 void	ft_printptr(void *p, int *count)
 {
-	ft_printstr("0x", count);
 	if (p == NULL)
-		ft_printchar('0', count);
+		ft_printstr("(nil)", count);
 	else
 	{
+		ft_printstr("0x", count);
 		ft_printptr_hex((unsigned long long)p, count);
 	}
 }
