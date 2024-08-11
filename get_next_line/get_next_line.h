@@ -13,6 +13,26 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+#endif
+
+#include <unistd.h>
+#include <stdlib.h>
+
+typedef struct s_list
+{
+	char			*buf;
+	struct s_list	*next;
+}	t_list;
+
 char	*get_next_line(int fd);
+
+int	find_newline(t_list *list);
+
+void	create_list(t_list **list, int fd);
+void	save_line(t_list **list, char *buf);
+
+t_list	*get_last_node(t_list *list);
 
 #endif
