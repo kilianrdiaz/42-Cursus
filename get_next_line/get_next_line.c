@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 18:02:08 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/08 18:02:46 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/08/12 21:02:03 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ char	*get_next_line(int fd)
 	static t_list	*list;
 	char			*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0))
 		return (NULL);
-
 	create_list(&list, fd);
-
 	if (list == NULL)
 		return (NULL);
 	next_line = get_line(list);
-	clean_list(list);
+	clean_list(&list);
 	return (next_line);
 }
 
@@ -56,7 +54,7 @@ void	save_line(t_list **list, char *buf)
 	t_list	*last_node;
 
 	last_node = get_last_node(*list);
-	new_node = malloc(sizeof(t_list *));
+	new_node = malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return ;
 	if (last_node == NULL)
@@ -64,7 +62,7 @@ void	save_line(t_list **list, char *buf)
 	else
 		last_node->next = new_node;
 	new_node->buf = buf;
-	new_node->next = NULL;	
+	new_node->next = NULL;
 }
 
 char	*get_line(t_list *list)
@@ -82,19 +80,19 @@ char	*get_line(t_list *list)
 	return (next_str);
 }
 
-void	clean_list(t_list *list)
+void	clean_list(t_list **list)
 {
-	int 	i;
+	int		i;
 	int		j;
 	char	*buf;
 	t_list	*last_node;
 	t_list	*cleaned_node;
 
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	cleaned_node = (t_list *)malloc(sizeof(t_list));
+	cleaned_node = malloc(sizeof(t_list));
 	if (buf == NULL || cleaned_node == NULL)
 		return ;
-	last_node = get_last_node(list);
+	last_node = get_last_node(*list);
 	i = 0;
 	j = 0;
 	while (last_node->buf[i] != '\n' && last_node->buf[i] != '\0')
@@ -104,5 +102,5 @@ void	clean_list(t_list *list)
 	buf[j] = '\0';
 	cleaned_node->buf = buf;
 	cleaned_node->next = NULL;
-	dealloc(&list, cleaned_node, buf);
+	dealloc(list, cleaned_node, buf);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/12 18:11:03 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/08/12 18:24:37 by kroyo-di         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	dealloc(t_list **list, t_list *cleaned_node, char *buf)
@@ -26,7 +38,7 @@ void	dealloc(t_list **list, t_list *cleaned_node, char *buf)
 void	copy_str(t_list *list, char *next_line)
 {
 	int	i;
-	int j;
+	int	j;
 
 	if (list == NULL)
 		return ;
@@ -53,7 +65,7 @@ int	get_length(t_list *list)
 {
 	int	i;
 	int	len;
-	
+
 	if (list == NULL)
 		return (0);
 	len = 0;
@@ -99,7 +111,6 @@ t_list	*get_last_node(t_list *list)
 {
 	if (list == NULL)
 		return (NULL);
-
 	while (list->next)
 		list = list->next;
 	return (list);
