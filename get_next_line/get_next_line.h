@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 18:02:57 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/12 20:57:51 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/08/19 21:25:00 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 }	t_list;
 
 char	*get_next_line(int fd);
-char	*get_line(t_list *list);
+char	*obtain_line(t_list *list);
 
 int		find_newline(t_list *list);
 int		get_length(t_list *list);

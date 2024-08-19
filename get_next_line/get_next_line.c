@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 18:02:08 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/12 21:02:03 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/08/19 21:45:09 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,20 @@ char	*get_next_line(int fd)
 	static t_list	*list;
 	char			*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0))
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0 ,0) < 0)
 		return (NULL);
 	create_list(&list, fd);
 	if (list == NULL)
+	{
+		free(list);
 		return (NULL);
-	next_line = get_line(list);
+	}
+	next_line = obtain_line(list);
+	if (!next_line)
+	{
+		free(next_line);
+		return (NULL);
+	}
 	clean_list(&list);
 	return (next_line);
 }
@@ -65,7 +73,7 @@ void	save_line(t_list **list, char *buf)
 	new_node->next = NULL;
 }
 
-char	*get_line(t_list *list)
+char	*obtain_line(t_list *list)
 {
 	int		str_len;
 	char	*next_str;
