@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 18:11:03 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/12 18:24:37 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:57:57 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	find_newline(t_list *list)
 	while (list)
 	{
 		i = 0;
-		while (list->buf[i] && i < BUFFER_SIZE)
+		while (list->buf[i])
 		{
 			if (list->buf[i] == '\n')
 				return (1);
