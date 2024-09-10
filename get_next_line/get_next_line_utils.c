@@ -1,117 +1,60 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 18:11:03 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/19 21:24:22 by kroyo-di         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// TODO header
 
 #include "get_next_line.h"
 
-void	dealloc(t_list **list, t_list *cleaned_node, char *buf)
+size_t	ft_strlen(const char *str)
 {
-	t_list	*tmp;
+	size_t	i;
 
-	if (*list == NULL)
-		return ;
-	while (*list)
-	{
-		tmp = (*list)->next;
-		free((*list)->buf);
-		free(*list);
-		*list = tmp;
-	}
-	*list = NULL;
-	if (cleaned_node->buf[0])
-		*list = cleaned_node;
-	else
-	{
-		free(buf);
-		free(cleaned_node);
-	}
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-void	copy_str(t_list *list, char *next_line)
+char	*ft_strchr(const char *str, int c)
 {
-	int	i;
-	int	j;
+	int		i;
+	char	a;
 
-	if (list == NULL)
-		return ;
-	j = 0;
-	while (list)
+	i = 0;
+	a = c;
+	while (str[i])
 	{
-		i = 0;
-		while (list->buf[i])
-		{
-			if (list->buf[i] == '\n')
-			{
-				next_line[j] = '\n';
-				next_line[++j] = '\0';
-				return ;
-			}
-			next_line[j++] = list->buf[i++];
-		}
-		list = list->next;
+		if (str[i] == a)
+			return ((char *)&str[i]);
+		i++;
 	}
-	next_line[j] = '\0';
-}
-
-int	get_length(t_list *list)
-{
-	int	i;
-	int	len;
-
-	if (list == NULL)
-		return (0);
-	len = 0;
-	while (list)
-	{
-		i = 0;
-		while (list->buf[i])
-		{
-			if (list->buf[i] == '\n')
-			{
-				len++;
-				return (len);
-			}
-			i++;
-			len++;
-		}
-		list = list->next;
-	}
-	return (len);
-}
-
-int	find_newline(t_list *list)
-{
-	int	i;
-
-	if (list == NULL)
-		return (0);
-	while (list)
-	{
-		i = 0;
-		while (list->buf[i])
-		{
-			if (list->buf[i] == '\n')
-				return (1);
-			i++;
-		}
-		list = list->next;
-	}
+	if (str[i] == a)
+		return ((char *)&str[i]);
 	return (0);
 }
 
-t_list	*get_last_node(t_list *list)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (list == NULL)
+	int		i;
+	int		s1_len;
+	int		s2_len;
+	char	*str;
+
+	if (!s1 || !s2)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s1_len--)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	s1_len = i;
+	i = 0;
+	while (s2_len--)
+		str[s1_len++] = s2[i++];
+	str[s1_len] = '\0';
+	return (str);
 }
+

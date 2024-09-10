@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 18:02:57 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/08/19 21:25:00 by kroyo-di         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//TODO header
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
@@ -20,24 +10,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_list
-{
-	char			*buf;
-	struct s_list	*next;
-}	t_list;
+size_t	ft_strlen(const char *str);
 
+char	*ft_strchr(const char *str, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *str, int c);
 char	*get_next_line(int fd);
-char	*obtain_line(t_list *list);
-
-int		find_newline(t_list *list);
-int		get_length(t_list *list);
-
-void	create_list(t_list **list, int fd);
-void	save_line(t_list **list, char *buf);
-void	copy_str(t_list *list, char *next_line);
-void	clean_list(t_list **list);
-void	dealloc(t_list **list, t_list *cleaned_node, char *buf);
-
-t_list	*get_last_node(t_list *list);
+char	*read_file(int fd, char *ret);
+char	*join_line(char *old_ret, char *line);
+char	*clean_line(char *buf);
+char	*next_line(char *buf);
 
 #endif
