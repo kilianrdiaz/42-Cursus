@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:58:01 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/09/11 19:06:50 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:29:09 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,8 @@ char	*get_next_line(int fd)
 	static char	*buf;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX
+		|| fd >= OPEN_MAX)
 		return (NULL);
 	buf = read_file(fd, buf);
 	if (!buf)
