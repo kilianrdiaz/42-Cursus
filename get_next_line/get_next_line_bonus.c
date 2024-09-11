@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:58:01 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/09/11 19:06:50 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:09:20 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*next_line(char *buf)
 {
@@ -103,21 +103,22 @@ char	*read_file(int fd, char *ret)
 
 char	*get_next_line(int fd)
 {
-	static char	*buf;
+	static char	*buf[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX
+		|| fd >= OPEN_MAX)
 		return (NULL);
-	buf = read_file(fd, buf);
-	if (!buf)
+	buf[fd] = read_file(fd, buf[fd]);
+	if (!buf[fd])
 		return (NULL);
-	line = clean_line(buf);
+	line = clean_line(buf[fd]);
 	if (!line)
 	{
-		free(buf);
-		buf = NULL;
+		free(buf[fd]);
+		buf[fd] = NULL;
 		return (NULL);
 	}
-	buf = next_line(buf);
+	buf[fd] = next_line(buf[fd]);
 	return (line);
 }
