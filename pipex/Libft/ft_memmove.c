@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:23:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 18:38:24 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 12:16:54 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/05 19:46:03 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "Libft/libft.h"
+void	*ft_memmove(void *s1, const void *s2, size_t n)
+{
+	char	*p1;
+	char	*p2;
 
-char	*get_path(char *cmd, char **env);
-void	ft_free_tab(char **tab);
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	if (s1 < s2)
+		return (ft_memcpy(s1, s2, n));
+	p1 = (char *)s1;
+	p2 = (char *)s2;
+	if (s1 == s2)
+		return (s1);
+	while (n--)
+	{
+		p1[n] = p2[n];
+	}
+	return (s1);
+}

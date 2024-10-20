@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:23:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 18:38:24 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 13:44:07 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/06/18 13:45:49 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "Libft/libft.h"
-
-char	*get_path(char *cmd, char **env);
-void	ft_free_tab(char **tab);
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
+}

@@ -6,7 +6,7 @@
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:23:38 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 17:52:50 by kroyo-di         ###   ########.fr       */
+/*   Updated: 2024/10/20 18:38:52 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pipex.h"
@@ -45,7 +45,7 @@ int main(int argc, char **argv, char **envp)
 		dup2(fd, STDIN_FILENO);
 		dup2(pipefd[1], STDOUT_FILENO);
 		close(pipefd[0]);
-		if (execve(get_path(cmd1, envp), cmd1, envp) == -1)
+		if (execve(get_path(argv[2], envp), cmd1, envp) == -1)
 		{
 			perror("Error en exceve del proceso hijo.");
 			ft_free_tab(cmd1);
@@ -58,8 +58,7 @@ int main(int argc, char **argv, char **envp)
 		dup2(fd, STDOUT_FILENO);
 		dup2(pipefd[0], STDIN_FILENO);
 		close (pipefd[1]);
-		wait (NULL);
-		execve(get_path(cmd2, envp), cmd2, envp);
+		execve(get_path(argv[3], envp), cmd2, envp);
 	}
 	return 0;
 }

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:23:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 18:38:24 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/23 17:58:27 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/08 14:50:43 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "Libft/libft.h"
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*ptr;
 
-char	*get_path(char *cmd, char **env);
-void	ft_free_tab(char **tab);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	else
+	{
+		ft_bzero(ptr, (nmemb * size));
+		return (ptr);
+	}
+}

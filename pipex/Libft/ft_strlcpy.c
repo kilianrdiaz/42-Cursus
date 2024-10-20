@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:23:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 18:38:24 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/06/18 12:25:34 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/05 19:48:26 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "Libft/libft.h"
+size_t	ft_strlcpy(char *dst, const char *src, unsigned int size)
+{
+	unsigned int	src_len;
+	unsigned int	dst_len;
+	unsigned int	i;
 
-char	*get_path(char *cmd, char **env);
-void	ft_free_tab(char **tab);
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	i = 0;
+	if (size > 0)
+	{
+		if (size > src_len)
+			dst_len = src_len;
+		else
+			dst_len = size - 1;
+		while (i < dst_len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[dst_len] = '\0';
+	}
+	return (src_len);
+}

@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroyo-di <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:23:53 by kroyo-di          #+#    #+#             */
-/*   Updated: 2024/10/20 18:38:24 by kroyo-di         ###   ########.fr       */
+/*   Created: 2024/07/03 20:47:03 by kroyo-di          #+#    #+#             */
+/*   Updated: 2024/07/09 14:23:53 by kroyo-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include "Libft/libft.h"
+#include "libft.h"
 
-char	*get_path(char *cmd, char **env);
-void	ft_free_tab(char **tab);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*rtn;
+	int		i;
+	int		len;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	rtn = malloc(sizeof(char) * (len + 1));
+	if (!rtn)
+		return (NULL);
+	while (s[i])
+	{
+		rtn[i] = f(i, s[i]);
+		i++;
+	}
+	rtn[i] = '\0';
+	return (rtn);
+}
