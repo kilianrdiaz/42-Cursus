@@ -11,23 +11,25 @@
 /* ************************************************************************** */
 #include "pipex.h"
 
-/*void	exec(char **argv, char **cmd, char **envp)
+void	exec(char *cmd, char *argv, char **envp)
 {
-	char
-}*/
+	char	**s_cmd;
+
+	s_cmd = ft_split(cmd, ' ');
+	if (execve(path, s_cmd, envp))
+	{
+
+	}
+}
 
 int main(int argc, char **argv, char **envp)
 {
-	char	**cmd1;
-	char	**cmd2;
 	int		pipefd[2];
 	int		fd;
 	pid_t	pid;
 
 	if (argc != 5)
 		return (0);
-	cmd1 = ft_split(argv[2], ' ');
-	cmd2 = ft_split(argv[3], ' ');
 	if (pipe(pipefd) == -1)
 	{
 		perror("Error al crear la tuberia");
